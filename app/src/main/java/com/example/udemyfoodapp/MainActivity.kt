@@ -21,8 +21,11 @@ class MainActivity : AppCompatActivity() {
 
         var navController = findNavController(R.id.navHostFragment)
 
-        val appBarConfiguration: AppBarConfiguration = AppBarConfiguration(setOf(R.id.recipesFragment,
-            R.id.favoriteRecipesFragment, R.id.foodJokeFragment))
+        val appBarConfiguration: AppBarConfiguration = AppBarConfiguration(setOf(
+            R.id.recipesFragment,
+            R.id.favoriteRecipesFragment,
+            R.id.foodJokeFragment)
+        )
 
         bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(navController,appBarConfiguration)
