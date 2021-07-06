@@ -1,9 +1,12 @@
-package com.example.udemyfoodapp
+package com.example.udemyfoodapp.models
 
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 data class FoodRecipe(
+    @SerializedName("results")
+    val results: List<Result>,
     @SerializedName("aggregateLikes")
     val aggregateLikes: Int,
     @SerializedName("cheap")
@@ -41,4 +44,4 @@ data class FoodRecipe(
     @SerializedName("veryHealthy")
     val veryHealthy: Boolean,
 
-)
+    )

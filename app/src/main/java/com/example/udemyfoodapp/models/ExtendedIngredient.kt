@@ -1,4 +1,4 @@
-package com.example.udemyfoodapp
+package com.example.udemyfoodapp.models
 
 
 import com.google.gson.annotations.SerializedName

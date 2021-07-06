@@ -1,6 +1,7 @@
-package com.example.udemyfoodapp
+package com.example.udemyfoodapp.models
 
 
+import com.example.udemyfoodapp.models.ExtendedIngredient
 import com.google.gson.annotations.SerializedName
 import java.util.*
 
@@ -76,4 +77,4 @@ data class Result(
     @SerializedName("weightWatcherSmartPoints")
     val weightWatcherSmartPoints: Int,
 
-)
+    )
