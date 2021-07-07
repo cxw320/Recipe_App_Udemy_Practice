@@ -8,7 +8,6 @@
             name="result"
             type="com.example.udemyfoodapp.models.Result"/>
 
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
