@@ -1,5 +1,5 @@
 package com.example.udemyfoodapp.data.network
-
+import com.example.udemyfoodapp.models.FoodRecipe
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.QueryMap

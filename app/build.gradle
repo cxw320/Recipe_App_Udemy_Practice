@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    //everything below did not come with default
     id 'kotlin-kapt'
     id 'kotlin-android-extensions'
     id 'androidx.navigation.safeargs.kotlin'
@@ -14,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.udemyfoodapp"
-        minSdkVersion 30
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -40,8 +39,13 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
 
 dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.10"
     implementation 'androidx.core:core-ktx:1.5.0'
@@ -84,10 +88,13 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
+
     //Dagger - Hilt
     implementation "com.google.dagger:hilt-android:2.28-alpha"
+    //kapt 'com.google.dagger:dagger-android-processor:2.15'
     kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
 
+   // implementation 'androidx.hilt:hilt-navigation-fragment:1.0.0'
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02"
     kapt "androidx.hilt:hilt-compiler:1.0.0-alpha02"
 

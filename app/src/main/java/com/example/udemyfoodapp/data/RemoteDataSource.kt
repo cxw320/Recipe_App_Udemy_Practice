@@ -1,6 +1,8 @@
 package com.example.udemyfoodapp.data
 
 import com.example.udemyfoodapp.data.network.FoodRecipesApi
+import com.example.udemyfoodapp.models.FoodRecipe
+import retrofit2.Response
 import javax.inject.Inject
 
 
@@ -15,7 +17,7 @@ import javax.inject.Inject
 class RemoteDataSource @Inject constructor(
     private val foodRecipesApi: FoodRecipesApi
 ) {
-    suspend fun getRecipes(queries: Map<String,String>): Reponse<FoodRecipes>{
+    suspend fun getRecipes(queries: Map<String,String>): Response<FoodRecipe>{
         return foodRecipesapi.getRecipes(queries)
 
     }

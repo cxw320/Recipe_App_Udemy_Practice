@@ -1,8 +1,18 @@
 package com.example.udemyfoodapp.di
-
+import dagger.hilt.android.components.SingletonComponent
+import com.example.udemyfoodapp.data.network.FoodRecipesApi
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
+
+import com.example.udemyfoodapp.util.Constants.Companion.BASE_URL
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
+import okhttp3.OkHttpClient
+import retrofit2.Retrofit
+
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 @Module
 @InstallIn(ApplicationComponent::class)
@@ -38,7 +48,7 @@ object NetworkModule {
     fun provideRetrofitInstance(
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory
-    ): Retrofit{
+    ): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
@@ -50,7 +60,7 @@ object NetworkModule {
     //to create FoodRecipesApi, need to create a retrofit instance
     @Singleton
     @Provides
-    fun provideApiService(retrofit: RetroFit):FoodRecipesApi{
+    fun provideApiService(retrofit: Retrofit): FoodRecipesApi {
 
         return retrofit.create(FoodRecipesApi::class.java)
 
