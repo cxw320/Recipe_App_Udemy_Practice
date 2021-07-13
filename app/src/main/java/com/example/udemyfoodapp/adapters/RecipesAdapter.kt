@@ -1,12 +1,12 @@
 package com.example.udemyfoodapp.adapters
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.udemyfoodapp.RecipesRowlayoutBinding
 import com.example.udemyfoodapp.models.FoodRecipe
 import com.example.udemyfoodapp.models.Result
-import com.example.udemyfoodapp.util.RecipesDiffUtil
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.example.udemyfoodapp.databinding.RecipesRowLayoutBinding
+import com.example.udemyfoodapp.util.RecipesDiffUtil
 
 class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
@@ -49,7 +49,7 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
     fun setData(newData:FoodRecipe){
         val recipesDiffUtil =
-            RecipesDiffUtil(recipes, newData.results) //pass in old list (recipes) and the new list (newData.results)
+            RecipesDiffUtil(recipes, newData.results)
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
         recipes = newData.results
         diffUtilResult.dispatchUpdatesTo(this)

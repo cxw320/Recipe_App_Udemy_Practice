@@ -1,5 +1,4 @@
 package com.example.udemyfoodapp.di
-import dagger.hilt.android.components.SingletonComponent
 import com.example.udemyfoodapp.data.network.FoodRecipesApi
 import dagger.Module
 import dagger.Provides
